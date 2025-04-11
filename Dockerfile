@@ -1,8 +1,12 @@
+ # Usar la imagen oficial de Nginx como base
  FROM nginx:latest
 
+# Copiar el archivo HTML a la ubicación donde Nginx espera encontrarlo
  COPY index.html /usr/share/nginx/html
- COPY linux.png /usr/share/nginx/html
 
- EXPOSE 80 443     
+# Exponer el puerto 80 para el servidor web
+ EXPOSE 80    
 
+# Nginx ya está configurado para ejercutarse como proceso principal
  CMD ["nginx", "-g", "daemon off;"]
+
